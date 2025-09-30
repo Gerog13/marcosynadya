@@ -15,7 +15,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Marcos & Nadya - 15 de Diciembre",
-  description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
+  description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
   generator: "Next.js",
   keywords: ["boda", "casamiento", "Marcos", "Nadya", "invitación", "celebration", "wedding"],
   authors: [{ name: "Marcos & Nadya" }],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: "https://marcosynadya.com", // Cambia esto por tu dominio real
     siteName: "Marcos & Nadya - Boda",
     title: "Marcos & Nadya - 15 de Diciembre",
-    description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
+    description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
     images: [
       {
         url: "https://marcosynadya.com/casamiento-1.jpeg", // URL completa para mejor compatibilidad
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Marcos & Nadya - 15 de Diciembre",
-    description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
+    description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
     images: ["https://marcosynadya.com/casamiento-1.jpeg"],
   },
   alternates: {
