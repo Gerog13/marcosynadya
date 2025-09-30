@@ -14,10 +14,10 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Marcos & Nadya - Wedding Celebration",
+  title: "Marcos & Nadya - 15 de Diciembre",
   description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
   generator: "Next.js",
-  keywords: ["wedding", "Marcos", "Nadya", "celebration", "invitation", "boda", "casamiento"],
+  keywords: ["boda", "casamiento", "Marcos", "Nadya", "invitación", "celebration", "wedding"],
   authors: [{ name: "Marcos & Nadya" }],
   creator: "Marcos & Nadya",
   publisher: "Marcos & Nadya",
@@ -35,28 +35,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://tu-dominio.com", // Cambia esto por tu dominio real
-    siteName: "Marcos & Nadya Wedding",
-    title: "Marcos & Nadya - Wedding Celebration",
+    url: "https://marcosynadya.com", // Cambia esto por tu dominio real
+    siteName: "Marcos & Nadya - Boda",
+    title: "Marcos & Nadya - 15 de Diciembre",
     description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
     images: [
       {
-        url: "/casamiento-1.jpeg", // Imagen principal para la vista previa
+        url: "https://marcosynadya.com/casamiento-1.jpeg", // URL completa para mejor compatibilidad
         width: 1200,
         height: 630,
-        alt: "Marcos & Nadya - Wedding Celebration",
+        alt: "Marcos & Nadya - 15 de Diciembre",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marcos & Nadya - Wedding Celebration",
+    title: "Marcos & Nadya - 15 de Diciembre",
     description: "¡Nos casamos! Te invitamos a celebrar el amor y la vida bailando con nosotros. Una invitación especial para el baile 💃🕺",
-    images: ["/casamiento-1.jpeg"],
+    images: ["https://marcosynadya.com/casamiento-1.jpeg"],
   },
   alternates: {
-    canonical: "https://tu-dominio.com", // Cambia por tu dominio real
+    canonical: "https://marcosynadya.com", // Cambia por tu dominio real
   },
   other: {
     "theme-color": "#8B5A3C", // Color de tema para móviles
@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
