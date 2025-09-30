@@ -17,14 +17,14 @@ const eventDetails = [
   {
     icon: Clock,
     title: "Hora",
-    info: "Ceremonia: 17:00 - Recepción: 19:00",
-    description: "La ceremonia comienza a las 17:00, seguida de la recepción",
+    info: "Ceremonia: 17hs - Recepción: 19hs",
+    description: "La ceremonia comienza a las 17hs, seguida de la recepción",
   },
   {
     icon: MapPin,
     title: "Lugar",
     info: "Iglesia San Vicente Ferrer & Quinta Doña Elvira",
-    description: "Ceremonia en la iglesia, fiesta en la quinta",
+    description: "Celebramos nuestro amor en la Iglesia y festejamos en Quinta Doña Elvira",
   },
   {
     icon: Shirt,
@@ -111,7 +111,7 @@ export function EventDetailsSection() {
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6" />
           <p className="text-lg text-muted-foreground font-wedding-sans max-w-2xl mx-auto leading-relaxed">
-            Todo lo que necesitas saber sobre nuestro día especial. ¡No podemos esperar a celebrar contigo!
+            Todo lo que necesitas saber sobre nuestro día especial. ¡No podemos esperar a celebrarlo con vos!
           </p>
         </motion.div>
 

@@ -238,9 +238,10 @@ export function HeroSection({ heroRevealed = false }: HeroSectionProps) {
               animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              Una propuesta en el cielo mendocino nos llevó hasta aquí.
-              <br className="hidden sm:block" />
-              Ahora queremos celebrar contigo.
+              Una propuesta en el cielo mendocino nos llevó hasta acá.
+              <span className="inline sm:hidden">&nbsp;</span>
+              <br className="hidden sm:block"/>
+              Ahora queremos celebrarlo con vos.
             </motion.p>
 
             <motion.div
