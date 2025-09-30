@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Sage / green-beige palette inspired by reference site */
+  --background: #fbf7ee; /* Warm ivory */
+  --foreground: #2d3748; /* Dark slate */
+  --card: #ffffff; /* White */
+  --card-foreground: #2d3748; /* Dark slate */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #2d3748; /* Dark slate */
+  /* Primary = soft sage */
+  --primary: #9fb29b; /* Sage */
+  --primary-foreground: #ffffff; /* White */
+  --secondary: #e7e2cf; /* Beige */
+  --secondary-foreground: #2d3748; /* Dark slate */
+  --muted: #f4efe2; /* Soft beige */
+  --muted-foreground: #6b7280; /* Gray */
+  /* Accent = warm gold for CTAs */
+  --accent: #d2a332; /* Warm gold */
+  --accent-foreground: #ffffff; /* White */
+  --destructive: #e53e3e; /* Red */
+  --destructive-foreground: #ffffff; /* White */
+  --border: #e5e7eb; /* Light gray */
+  --input: #ffffff; /* White */
+  --ring: #9fb29b; /* Sage */
+  --chart-1: #9fb29b; /* Sage */
+  --chart-2: #e7e2cf; /* Beige */
+  --chart-3: #d2a332; /* Gold */
+  --chart-4: #cbd5e0; /* Gray */
+  --chart-5: #94a3b8; /* Slate */
+  --radius: 0.5rem;
+  --sidebar: #ffffff; /* White */
+  --sidebar-foreground: #2d3748; /* Dark slate */
+  --sidebar-primary: #9fb29b; /* Sage */
+  --sidebar-primary-foreground: #ffffff; /* White */
+  --sidebar-accent: #e7e2cf; /* Beige */
+  --sidebar-accent-foreground: #2d3748; /* Dark slate */
+  --sidebar-border: #e5e7eb; /* Light gray */
+  --sidebar-ring: #9fb29b; /* Sage */
+}
+
+.dark {
+  /* Keeping dark mode but with softer tones for wedding theme */
+  --background: #1f2937; /* Dark Slate */
+  --foreground: #f8ede3; /* Ivory */
+  --card: #374151; /* Darker Slate */
+  --card-foreground: #f8ede3; /* Ivory */
+  --popover: #374151; /* Darker Slate */
+  --popover-foreground: #f8ede3; /* Ivory */
+  --primary: #d6cfcf; /* Muted Blush */
+  --primary-foreground: #1f2937; /* Dark Slate */
+  --secondary: #a8d8b9; /* Muted Green */
+  --secondary-foreground: #1f2937; /* Dark Slate */
+  --muted: #374151; /* Darker Slate */
+  --muted-foreground: #9ca3af; /* Gray */
+  --accent: #d6cfcf; /* Muted Blush */
+  --accent-foreground: #1f2937; /* Dark Slate */
+  --destructive: #be123c; /* Rose */
+  --destructive-foreground: #f8ede3; /* Ivory */
+  --border: #4b5563; /* Medium Gray */
+  --input: #374151; /* Darker Slate */
+  --ring: #d6cfcf; /* Muted Blush */
+  --chart-1: #a8d8b9; /* Muted Green */
+  --chart-2: #f8ede3; /* Ivory */
+  --chart-3: #d6cfcf; /* Muted Blush */
+  --chart-4: #eae0d5; /* Champagne */
+  --chart-5: #f1f5f9; /* Soft Gray */
+  --sidebar: #374151; /* Darker Slate */
+  --sidebar-foreground: #f8ede3; /* Ivory */
+  --sidebar-primary: #d6cfcf; /* Muted Blush */
+  --sidebar-primary-foreground: #1f2937; /* Dark Slate */
+  --sidebar-accent: #a8d8b9; /* Muted Green */
+  --sidebar-accent-foreground: #1f2937; /* Dark Slate */
+  --sidebar-border: #4b5563; /* Medium Gray */
+  --sidebar-ring: #d6cfcf; /* Muted Blush */
+}
+
+@theme inline {
+  /* Updated to Poppins font family */
+  --font-serif: "Poppins", sans-serif;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  /* Updated custom wedding typography styles */
+  .font-wedding-serif {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .font-wedding-sans {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+}
+
+/* Added smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
