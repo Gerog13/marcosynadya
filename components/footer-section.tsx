@@ -16,9 +16,10 @@ export function FooterSection() {
             <Image
               src="/avion-1.png"
               alt="Abrir invitación"
-              width={130}
-              height={130}
-              className="object-contain"
+              width={0}
+              height={0}
+              style={{ width: "60px", height: "auto" }}
+              className="object-contain ml-0.5 mt-1 w-auto h-auto"
               priority
             />
           </div>
@@ -26,10 +27,10 @@ export function FooterSection() {
             Con amor,
           </p>
           <h3 className="text-2xl md:text-3xl font-wedding-serif font-bold text-foreground mb-6">
-            Marcos & Nadya
+            Nadya & Marcos
           </h3>
           <p className="text-sm md:text-base text-muted-foreground font-wedding-sans">
-            28 de Febrero, 2026 • #MarcosYNadya2026
+            28 de Febrero, 2026 • #NadyayMarcos
           </p>
         </motion.div>
       </div>

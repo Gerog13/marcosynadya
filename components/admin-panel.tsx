@@ -28,7 +28,6 @@ export function AdminPanel() {
   const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD
 
   useEffect(() => {
-    // Verificar si ya está autenticado (persistencia en sessionStorage)
     const savedAuth = sessionStorage.getItem('admin_authenticated')
     if (savedAuth === 'true') {
       setIsAuthenticated(true)
@@ -49,7 +48,6 @@ export function AdminPanel() {
 
       setResponses(data || [])
       
-      // Calcular estadísticas
       const total = data?.length || 0
       const attending = data?.filter(r => r.attendance === 'si').length || 0
       const specialMenus = data?.filter(r => r.menu !== 'ninguno').length || 0
@@ -79,7 +77,6 @@ export function AdminPanel() {
 
     setAuthLoading(true)
     
-    // Simular un pequeño delay para mejor UX
     await new Promise(resolve => setTimeout(resolve, 500))
     
     if (password === ADMIN_PASSWORD) {
@@ -138,7 +135,6 @@ export function AdminPanel() {
     document.body.removeChild(link)
   }
 
-  // Pantalla de autenticación
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-8">

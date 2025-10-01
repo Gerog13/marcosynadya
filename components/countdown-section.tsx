@@ -40,7 +40,7 @@ export function CountdownSection() {
 
   const addToCalendar = () => {
     const eventDetails = {
-      title: "Boda de Marcos & Nadya",
+      title: "Boda de Nadya & Marcos",
       startDate: "20260228T170000",
       endDate: "20260228T230000",
       description: "Ceremonia en Iglesia San Vicente Ferrer, seguida de recepción en Quinta Doña Elvira",

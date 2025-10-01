@@ -9,19 +9,19 @@ interface EnvelopeAnimationProps {
   onHeroReveal?: () => void;
 }
 
-export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimationProps) {
+export function EnvelopeAnimation({
+  onComplete,
+  onHeroReveal,
+}: EnvelopeAnimationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClickable, setIsClickable] = useState(true);
   const [showOpeningAnimation, setShowOpeningAnimation] = useState(false);
 
-  // Disable background scroll while the envelope is visible
   useEffect(() => {
-    // Immediately hide scrollbars to prevent flash
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
-    
+
     return () => {
-      // Restore scrollbars when component unmounts
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     };
@@ -33,17 +33,14 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
     setIsClickable(false);
     setShowOpeningAnimation(true);
 
-    // Start opening animation
     setTimeout(() => {
       setIsOpen(true);
     }, 200);
 
-    // Start revealing hero section gradually
     setTimeout(() => {
       onHeroReveal?.();
     }, 800);
 
-    // Complete animation after opening sequence
     setTimeout(() => {
       onComplete();
     }, 2000);
@@ -57,9 +54,9 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
         transition={{ duration: 0.5 }}
         className="fixed inset-0 z-50 bg-white flex items-center justify-center"
         style={{
-          background: showOpeningAnimation 
+          background: showOpeningAnimation
             ? `linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 100%)`
-            : 'white'
+            : "white",
         }}
       >
         {/* Full screen envelope */}
@@ -99,24 +96,28 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
               }}
             />
 
-             {/* Top envelope flap - animated opening */}
+            {/* Top envelope flap - animated opening */}
              <motion.div
-               className="absolute top-0 left-0 w-full h-[40%] origin-top"
+               className="absolute top-0 left-0 w-full h-[40%]"
                style={{
+                 transformOrigin: "top center",
                  background: `linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.03))`,
                  clipPath: "polygon(0 0, 100% 0, 50% 100%, 0 0)",
                  boxShadow: "0 6px 14px rgba(0,0,0,0.04) inset",
                }}
-               animate={showOpeningAnimation ? {
-                 rotateX: [0, -120],
-                 transformOrigin: "top center",
-               } : {}}
-               transition={{
-                 duration: 1.2,
-                 ease: "easeInOut",
-                 delay: 0.3,
-               }}
-             />
+               animate={
+                 showOpeningAnimation
+                   ? {
+                       rotateX: [0, -120],
+                     }
+                   : {}
+               }
+              transition={{
+                duration: 1.2,
+                ease: "easeInOut",
+                delay: 0.3,
+              }}
+            />
           </div>
 
           {/* Central seal - aligned with flap's point */}
@@ -124,28 +125,40 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
             <motion.div
               className="w-32 h-32 bg-primary rounded-full flex items-center justify-center shadow-2xl cursor-pointer"
               animate={{
-                scale: isClickable ? [1, 1.05, 1] : showOpeningAnimation ? [1, 0.8, 0] : 1,
+                scale: isClickable
+                  ? [1, 1.05, 1]
+                  : showOpeningAnimation
+                  ? [1, 0.8, 0]
+                  : 1,
                 boxShadow: isClickable
                   ? [
                       "0 8px 16px rgba(0,0,0,0.2)",
                       "0 12px 24px rgba(0,0,0,0.3)",
                       "0 8px 16px rgba(0,0,0,0.2)",
                     ]
-                  : showOpeningAnimation 
-                    ? "0 8px 16px rgba(0,0,0,0.2)"
-                    : "0 8px 16px rgba(0,0,0,0.2)",
+                  : showOpeningAnimation
+                  ? "0 8px 16px rgba(0,0,0,0.2)"
+                  : "0 8px 16px rgba(0,0,0,0.2)",
                 opacity: showOpeningAnimation ? [1, 0.7, 0] : 1,
               }}
               transition={{
-                scale: isClickable 
-                  ? { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }
-                  : showOpeningAnimation 
-                    ? { duration: 0.8, ease: "easeInOut", delay: 0.1 }
-                    : { duration: 0.3 },
-                boxShadow: isClickable 
-                  ? { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }
+                scale: isClickable
+                  ? {
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }
+                  : showOpeningAnimation
+                  ? { duration: 0.8, ease: "easeInOut", delay: 0.1 }
                   : { duration: 0.3 },
-                opacity: showOpeningAnimation 
+                boxShadow: isClickable
+                  ? {
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }
+                  : { duration: 0.3 },
+                opacity: showOpeningAnimation
                   ? { duration: 0.8, ease: "easeInOut", delay: 0.1 }
                   : { duration: 0.3 },
               }}
@@ -154,9 +167,10 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
               <Image
                 src="/avion-1.png"
                 alt="Abrir invitación"
-                width={140}
-                height={140}
-                className="object-contain"
+                width={0}
+                height={0}
+                style={{ width: "110px", height: "auto" }}
+                className="object-contain ml-1"
                 priority
               />
             </motion.div>
@@ -165,10 +179,15 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
           {/* Instructions - aligned with seal */}
           <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center">
             <motion.p
-              animate={showOpeningAnimation ? { opacity: 0 } : { opacity: [0.5, 1, 0.5] }}
-              transition={showOpeningAnimation 
-                ? { duration: 0.3, ease: "easeOut" }
-                : { duration: 1.5, repeat: Number.POSITIVE_INFINITY }
+              animate={
+                showOpeningAnimation
+                  ? { opacity: 0 }
+                  : { opacity: [0.5, 1, 0.5] }
+              }
+              transition={
+                showOpeningAnimation
+                  ? { duration: 0.3, ease: "easeOut" }
+                  : { duration: 1.5, repeat: Number.POSITIVE_INFINITY }
               }
               className="text-white font-wedding-sans text-base md:text-xl drop-shadow-lg"
             >
@@ -176,8 +195,6 @@ export function EnvelopeAnimation({ onComplete, onHeroReveal }: EnvelopeAnimatio
             </motion.p>
           </div>
         </div>
-
-
       </motion.div>
     </AnimatePresence>
   );

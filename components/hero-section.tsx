@@ -14,33 +14,27 @@ export function HeroSection({ heroRevealed = false }: HeroSectionProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Array de imágenes de casamiento disponibles
   const weddingImages = [
-    "/casamiento-1.jpeg",
     "/casamiento-2.jpeg",
     "/casamiento-3.jpeg",
-    "/casamiento-4.jpeg",
     "/casamiento-5.jpeg",
     "/casamiento-6.jpeg",
     "/casamiento-7.jpeg",
-    "/casamiento-8.jpeg",
     "/casamiento-9.jpeg",
     "/casamiento-10.jpeg",
     "/casamiento-12.jpg",
   ];
 
-  // Trigger animations when hero is revealed (after envelope opens)
   useEffect(() => {
     if (heroRevealed) {
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 800); // Small delay after hero is revealed
+      }, 800);
 
       return () => clearTimeout(timer);
     }
   }, [heroRevealed]);
 
-  // Cambiar imagen cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(
@@ -208,21 +202,21 @@ export function HeroSection({ heroRevealed = false }: HeroSectionProps) {
             className="text-center lg:text-left"
           >
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-2 font-wedding-sans tracking-wide"
+              className="text-base sm:text-lg md:text-xl uppercase text-muted-foreground mb-6 sm:mb-2 font-wedding-sans tracking-wide"
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Estás Invitado a Celebrar
+              ¡Nos casamos!
             </motion.p>
 
             <motion.h1
-              className="font-wedding-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-10 sm:mb-8 text-balance leading-tight"
+              className="font-wedding-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-10 sm:mb-8 text-balance"
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              Marcos & Nadya
+              Nadya & Marcos
             </motion.h1>
 
             <motion.div

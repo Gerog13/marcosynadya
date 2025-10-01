@@ -14,13 +14,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Marcos & Nadya - 15 de Diciembre",
+  title: "Nadya & Marcos - 28 de Febrero",
   description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
   generator: "Next.js",
   keywords: ["boda", "casamiento", "Marcos", "Nadya", "invitación", "celebration", "wedding"],
-  authors: [{ name: "Marcos & Nadya" }],
-  creator: "Marcos & Nadya",
-  publisher: "Marcos & Nadya",
+  authors: [{ name: "Nadya & Marcos" }],
+  creator: "Nadya & Marcos",
+  publisher: "Nadya & Marcos",
   robots: {
     index: true,
     follow: true,
@@ -35,31 +35,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://marcosynadya.com", // Cambia esto por tu dominio real
-    siteName: "Marcos & Nadya - Boda",
-    title: "Marcos & Nadya - 15 de Diciembre",
+    url: "https://marcosynadya.com", 
+    siteName: "Nadya & Marcos - Boda",
+    title: "Nadya & Marcos - 28 de Febrero",
     description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
     images: [
       {
-        url: "https://marcosynadya.com/casamiento-1.jpeg", // URL completa para mejor compatibilidad
+        url: "https://marcosynadya.com/casamiento-2.jpeg",
         width: 1200,
         height: 630,
-        alt: "Marcos & Nadya - 15 de Diciembre",
+        alt: "Nadya & Marcos - 28 de Febrero",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marcos & Nadya - 15 de Diciembre",
+    title: "Nadya & Marcos - 28 de Febrero",
     description: "¡Nos casamos! Te invitamos a celebrar este momento tan especial con nosotros. Una invitación para nuestro casamiento 💕",
-    images: ["https://marcosynadya.com/casamiento-1.jpeg"],
+    images: ["https://marcosynadya.com/casamiento-2.jpeg"],
   },
   alternates: {
-    canonical: "https://marcosynadya.com", // Cambia por tu dominio real
+    canonical: "https://marcosynadya.com", 
   },
   other: {
-    "theme-color": "#8B5A3C", // Color de tema para móviles
+    "theme-color": "#8B5A3C",
   },
 }
 

@@ -32,12 +32,11 @@ export function RSVPSection() {
     setIsSubmitting(true)
     
     try {
-      // Enviar datos a Supabase
       const { data, error } = await supabase
         .from('rsvp_responses')
         .insert([
           {
-            attendance: "si", // Siempre "si" porque están llenando el formulario
+            attendance: "si",
             name: formData.name,
             menu: formData.menu,
             companions: formData.companions,
@@ -56,7 +55,6 @@ export function RSVPSection() {
         description: "Gracias por confirmar tu asistencia",
       })
       
-      // Cerrar modal después de 3 segundos
       setTimeout(() => {
         setIsModalOpen(false)
         setIsSubmitted(false)

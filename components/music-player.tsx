@@ -11,10 +11,9 @@ interface MusicPlayerProps {
 
 export function MusicPlayer({ isVisible }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [volume, setVolume] = useState(0.3) // Volumen inicial más bajo
+  const [volume, setVolume] = useState(0.3) 
   const audioRef = useRef<HTMLAudioElement>(null)
 
-  // Autoplay cuando se hace visible
   useEffect(() => {
     if (isVisible && audioRef.current) {
       audioRef.current.volume = volume
@@ -24,7 +23,6 @@ export function MusicPlayer({ isVisible }: MusicPlayerProps) {
         })
         .catch((error) => {
           console.warn("Autoplay prevented:", error)
-          // Si el autoplay falla, el usuario puede hacer clic en el botón para reproducir
         })
     } else if (!isVisible && audioRef.current) {
       audioRef.current.pause()
