@@ -17,7 +17,7 @@ const eventDetails = [
   {
     icon: Clock,
     title: "Hora Ceremonia",
-    info: "18:00 hs",
+    info: "17:30 hs",
     description: "Ceremonia religiosa en la Iglesia",
   },
   {
